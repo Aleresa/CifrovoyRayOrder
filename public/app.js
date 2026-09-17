@@ -41,7 +41,7 @@ const telegramWrap = telegramInput.closest(".input-wrap");
 const telegramError = document.querySelector("#telegram-error");
 const submitButton = document.querySelector("#submit-order");
 const formStatus = document.querySelector("#form-status");
-const successDialog = document.querySelector("#success-dialog");
+const successDialog = document.querySelector("#success-dialog");\nconst telegramApp = window.Telegram?.WebApp;\ntelegramApp?.ready();\ntelegramApp?.expand();\nconst telegramUsername = telegramApp?.initDataUnsafe?.user?.username;\nif (telegramUsername) telegramInput.value = telegramUsername;
 
 const clampQuantity = (value) => {
   const parsed = Number.parseInt(value, 10);
@@ -195,7 +195,7 @@ orderForm.addEventListener("submit", async (event) => {
   }
 });
 
-document.querySelector("#close-dialog").addEventListener("click", () => successDialog.close());
+document.querySelector("#close-dialog").addEventListener("click", () => {\n  successDialog.close();\n  telegramApp?.close();\n});
 successDialog.addEventListener("click", (event) => {
   if (event.target === successDialog) successDialog.close();
 });
