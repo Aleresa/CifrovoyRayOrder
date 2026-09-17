@@ -46,3 +46,9 @@ TELEGRAM_CHAT_ID=ваш_chat_id
 - проверка состояния: `GET /api/health`.
 
 GitHub Pages не подходит для полной версии, потому что он не выполняет серверный код и не умеет безопасно хранить токен Telegram-бота.
+
+## Telegram Mini App
+
+Публичная версия: https://cifrovoy-ray-order.alereasa.chatgpt.site
+
+Приложение подключается к боту [@CifrovoyRayOrder_Bot](https://t.me/CifrovoyRayOrder_Bot). В BotFather этот HTTPS-адрес нужно указать как Web App URL. Интерфейс использует Telegram WebApp SDK: раскрывается на весь экран, подхватывает Telegram-ник пользователя и поддерживает тактильную обратную связь.
