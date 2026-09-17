@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Оптовый заказ оригинальных аксессуаров Apple в магазине Цифровой Рай" />
+    <meta name="theme-color" content="#f5f5f7" />
+    <title>Apple — Цифровой Рай</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/app.js" type="module"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Цифровой Рай — на главную">
+        <span class="brand-mark" aria-hidden="true">ЦР</span>
+        <span>
+          <strong>Цифровой Рай</strong>
+          <small>Оптовые заказы</small>
+        </span>
+      </a>
+      <span class="header-pill"><span></span> Каталог открыт</span>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <span class="eyebrow">Оригинальные аксессуары</span>
+          <h1 id="page-title">Apple</h1>
+          <p>Выберите нужное количество, проверьте сумму и отправьте заказ — без лишних звонков и таблиц.</p>
+        </div>
+        <div class="hero-symbol" aria-hidden="true">
+          <svg viewBox="0 0 48 58" role="img">
+            <path d="M39.57 30.72c-.05-8.15 6.66-12.12 6.97-12.31-3.8-5.56-9.73-6.32-11.82-6.38-4.98-.52-9.81 2.98-12.35 2.98-2.59 0-6.5-2.93-10.71-2.84-5.42.08-10.49 3.22-13.27 8.1-5.74 9.94-1.46 24.55 4.04 32.59 2.75 3.93 5.96 8.32 10.17 8.16 4.12-.17 5.66-2.62 10.64-2.62 4.93 0 6.38 2.62 10.68 2.52 4.42-.07 7.2-3.95 9.86-7.92 3.18-4.51 4.46-8.95 4.51-9.18-.1-.04-8.64-3.3-8.72-13.1ZM31.47 6.74C33.69 3.96 35.2.18 34.78-3.65c-3.21.14-7.23 2.23-9.55 4.95-2.05 2.39-3.88 6.31-3.4 10 3.61.27 7.27-1.83 9.64-4.56Z" transform="translate(0 4)" />
+          </svg>
+        </div>
+      </section>
+
+      <section class="catalog" aria-labelledby="catalog-title">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">3 позиции</span>
+            <h2 id="catalog-title">Кабели Apple</h2>
+          </div>
+          <p>Количество для каждой позиции: от 1 до 1 000 шт.</p>
+        </div>
+
+        <div class="product-table" role="table" aria-label="Товары Apple">
+          <div class="table-head" role="row">
+            <span role="columnheader">Товар</span>
+            <span role="columnheader">Цена</span>
+            <span role="columnheader">Количество</span>
+            <span role="columnheader">Итого</span>
+          </div>
+          <div id="product-list" class="product-list" role="rowgroup"></div>
+        </div>
+      </section>
+
+      <section class="checkout" aria-labelledby="checkout-title">
+        <div class="summary-panel">
+          <span class="eyebrow">Ваш заказ</span>
+          <h2 id="checkout-title">Итого</h2>
+          <div class="summary-stats">
+            <div>
+              <span>Товаров в заказе</span>
+              <strong id="total-quantity">0 шт.</strong>
+            </div>
+            <div class="summary-price">
+              <span>Сумма заказа</span>
+              <strong id="grand-total">0 ₽</strong>
+            </div>
+          </div>
+          <p id="summary-hint" class="summary-hint">Добавьте хотя бы один товар, чтобы оформить заказ.</p>
+        </div>
+
+        <form id="order-form" class="order-form" novalidate>
+          <div class="form-heading">
+            <span class="step">01</span>
+            <div>
+              <h2>Контакт для связи</h2>
+              <p>Мы напишем вам в Telegram для подтверждения заказа.</p>
+            </div>
+          </div>
+
+          <label class="field" for="telegram">
+            <span>Ваш ник в Telegram</span>
+            <span class="input-wrap">
+              <span class="at" aria-hidden="true">@</span>
+              <input id="telegram" name="telegram" type="text" inputmode="text" autocomplete="username" maxlength="33" placeholder="username" required aria-describedby="telegram-help telegram-error" />
+            </span>
+            <small id="telegram-help">Например: @digitalray</small>
+            <small id="telegram-error" class="field-error" role="alert"></small>
+          </label>
+
+          <input class="website-field" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+          <button id="submit-order" class="submit-button" type="submit" disabled>
+            <span>Оформить заказ</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+          </button>
+          <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <span>© <span id="year"></span> Цифровой Рай</span>
+      <span>Оригинальные аксессуары · Оптовые заказы</span>
+    </footer>
+
+    <dialog id="success-dialog" class="success-dialog">
+      <div class="success-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="m7 12 3 3 7-7" /></svg>
+      </div>
+      <span class="eyebrow">Заказ принят</span>
+      <h2>Спасибо!</h2>
+      <p id="success-message">Ваш заказ отправлен. Мы свяжемся с вами в Telegram.</p>
+      <p class="order-number">Номер заказа: <strong id="order-number"></strong></p>
+      <button id="close-dialog" type="button">Готово</button>
+    </dialog>
+
+    <template id="product-template">
+      <article class="product-row" role="row">
+        <div class="product-main" role="cell">
+          <img class="product-image" alt="" />
+          <div>
+            <span class="product-index"></span>
+            <h3 class="product-name"></h3>
+            <span class="product-sku"></span>
+          </div>
+        </div>
+        <div class="product-price" role="cell">
+          <span class="mobile-label">Цена</span>
+          <strong></strong>
+          <small>за 1 шт.</small>
+        </div>
+        <div class="quantity-cell" role="cell">
+          <span class="mobile-label">Количество</span>
+          <div class="quantity-control">
+            <button class="quantity-minus" type="button" aria-label="Уменьшить количество">−</button>
+            <label>
+              <span class="sr-only">Количество</span>
+              <input class="quantity-input" type="number" min="0" max="1000" step="1" value="0" inputmode="numeric" />
+            </label>
+            <button class="quantity-plus" type="button" aria-label="Увеличить количество">+</button>
+          </div>
+        </div>
+        <div class="line-total" role="cell">
+          <span class="mobile-label">Итого</span>
+          <strong>0 ₽</strong>
+        </div>
+      </article>
+    </template>
+  </body>
+</html>

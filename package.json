@@ -1,0 +1,15 @@
+{
+  "name": "cifrovoy-ray-order",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Оптовая форма заказа магазина «Цифровой Рай»",
+  "scripts": {
+    "start": "node server.mjs",
+    "dev": "NODE_ENV=development node --watch server.mjs",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
